@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GitDataService} from '../git-data.service'
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  data = []
+
+  constructor(private user:GitDataService) {
+    this.user.getData().subscribe(data => {
+      data = data
+      console.log(data)
+    })
+   }
 
   ngOnInit(): void {
   }
