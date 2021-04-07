@@ -11,10 +11,10 @@ export class AboutComponent implements OnInit {
   data = []
 
   constructor(private user:GitDataService) {
-    this.user.getData().subscribe(data => {
-      data = data
-      console.log(data)
-    })
+    // this.user.getData().subscribe(data => {
+    //   data = data
+    //   console.log(data)
+    // })
    }
 
   ngOnInit(): void {

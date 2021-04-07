@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GitDataService} from './git-data.service'
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app2';
+  data = []
+  
+  constructor(private user:GitDataService){
+    this.user.getData().subscribe(data => {
+      data = data
+      console.log(data)
+    })
 
-  constructor(){}
+  }
+  
+  
 }
